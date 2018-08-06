@@ -14,12 +14,12 @@ ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=1f7e5c628
       position: station.position,      //Crée a chaque boucle un marqueur avec la position définis par l'élément station.position  
       map: map,                        //
       title: station.address,
-      icon : "image_vert.png",         // icone par défaut
+      icon : "images/image_vert.png",         // icone par défaut
     });
     // modification de l'icone en cas de station fermé ou 0 vélos disponible
     if(station.status != "OPEN" || station.available_bikes == 0)
     {
-      marker.icon = "image_rouge.png";
+      marker.icon = "images/image_rouge.png";
     }
 
     // événement au click sur un marqueur

@@ -33,6 +33,7 @@ var slider = {
 
         this.slideDroit(image);
         this.slideGauche(image);
+        this.toucheClavier(image);
         
 
     },
@@ -62,6 +63,34 @@ var slider = {
             }
             image.src = myThis.tableauImage[myThis.index];
             
+        });
+    },
+
+    toucheClavier : function(image){
+        myThis = this;
+        document.addEventListener("keydown",function(e){
+            var touche = e.keyCode;
+            console.log(touche);
+            if(touche == 37){
+
+                if(myThis.index <= 0){
+                    myThis.index = myThis.tableauImage.length-1;
+                }else{
+                    myThis.index --;
+                }
+                image.src = myThis.tableauImage[myThis.index];
+               
+            };
+            if (touche == 39){
+
+                if (myThis.index == myThis.tableauImage.length-1){
+                    myThis.index = 0;
+                }else{
+                    myThis.index ++;
+                }
+                image.src = myThis.tableauImage[myThis.index];
+
+            };
         });
     },
 }

@@ -5,7 +5,7 @@ var slider = {
         "images/bg1.jpg",
         "images/bg2.jpg",
     ],
-    
+    parent : "#slider",
     alt : "image du slider",
     width : "100%",
     height : "500px",
@@ -14,7 +14,7 @@ var slider = {
 
         //creation de la balise <img>
         var image = document.createElement("img");
-        document.querySelector("#slider").appendChild(image);
+        document.querySelector(this.parent).appendChild(image);
         image.src = this.tableauImage[this.index];
         image.alt = this.alt;
         image.style.width = this.width;
@@ -24,12 +24,12 @@ var slider = {
         var bouton = document.createElement("button");
         bouton.id = "gauche";
         bouton.innerHTML = "precedent";
-        document.querySelector("#slider").appendChild(bouton);
+        document.querySelector(this.parent).appendChild(bouton);
 
         var bouton = document.createElement("button");
         bouton.id = "droit";
         bouton.innerHTML = "suivant";
-        document.querySelector("#slider").appendChild(bouton);
+        document.querySelector(this.parent).appendChild(bouton);
 
         this.slideDroit(image);
         this.slideGauche(image);
@@ -97,4 +97,5 @@ var slider = {
 }
 
 var slider = Object.create(slider);
+slider.parent = "footer";
 slider.init();

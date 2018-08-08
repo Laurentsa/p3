@@ -69,8 +69,9 @@ var slider = {
     toucheClavier : function(image){
         myThis = this;
         document.addEventListener("keydown",function(e){
+            
             var touche = e.keyCode;
-            console.log(touche);
+
             if(touche == 37){
 
                 if(myThis.index <= 0){

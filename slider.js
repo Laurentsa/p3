@@ -97,5 +97,4 @@ var slider = {
 }
 
 var slider = Object.create(slider);
-slider.parent = "footer";
 slider.init();

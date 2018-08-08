@@ -20,6 +20,17 @@ var slider = {
         image.style.width = this.width;
         image.style.height = this.height;
 
+        //bouton gauche droit
+        var bouton = document.createElement("button");
+        bouton.id = "gauche";
+        bouton.innerHTML = "precedent";
+        document.querySelector("#slider").appendChild(bouton);
+
+        var bouton = document.createElement("button");
+        bouton.id = "droit";
+        bouton.innerHTML = "suivant";
+        document.querySelector("#slider").appendChild(bouton);
+
     },
 }
 

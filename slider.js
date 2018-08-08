@@ -31,6 +31,23 @@ var slider = {
         bouton.innerHTML = "suivant";
         document.querySelector("#slider").appendChild(bouton);
 
+        this.slideDroit(image);
+
+
+    },
+
+    slideDroit : function(image){
+        myThis = this;
+        document.querySelector("#droit").addEventListener("click",function(){
+
+            if (myThis.index == myThis.tableauImage.length-1){
+                myThis.index = 0;
+            }else{
+                myThis.index ++;
+            }
+            image.src = myThis.tableauImage[myThis.index];
+            
+        });
     },
 }
 

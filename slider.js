@@ -62,12 +62,7 @@ var slider = {
         myThis = this;
         document.querySelector("#droit").addEventListener("click",function(){
 
-            if (myThis.index == myThis.tableauImage.length-1){
-                myThis.index = 0;
-            }else{
-                myThis.index ++;
-            }
-            image.src = myThis.tableauImage[myThis.index];
+            myThis.droit(image);
             
         });
     },
@@ -76,12 +71,7 @@ var slider = {
         myThis = this;
         document.querySelector("#gauche").addEventListener("click",function(){
 
-            if(myThis.index <= 0){
-                myThis.index = myThis.tableauImage.length-1;
-            }else{
-                myThis.index --;
-            }
-            image.src = myThis.tableauImage[myThis.index];
+            myThis.gauche(image);
             
         });
     },
@@ -94,25 +84,36 @@ var slider = {
 
             if(touche == 37){
 
-                if(myThis.index <= 0){
-                    myThis.index = myThis.tableauImage.length-1;
-                }else{
-                    myThis.index --;
-                }
-                image.src = myThis.tableauImage[myThis.index];
+                myThis.gauche(image);
                
             };
             if (touche == 39){
 
-                if (myThis.index == myThis.tableauImage.length-1){
-                    myThis.index = 0;
-                }else{
-                    myThis.index ++;
-                }
-                image.src = myThis.tableauImage[myThis.index];
+                myThis.droit(image);
 
             };
         });
+    },
+    gauche : function(image){
+
+        if(this.index <= 0){
+            this.index = this.tableauImage.length-1;
+        }else{
+            this.index --;
+        }
+        image.src = this.tableauImage[this.index];
+
+    },
+
+    droit : function(image){
+
+        if (this.index == this.tableauImage.length-1){
+            this.index = 0;
+        }else{
+            this.index ++;
+        }
+        image.src = this.tableauImage[this.index];
+        
     },
 }
 
